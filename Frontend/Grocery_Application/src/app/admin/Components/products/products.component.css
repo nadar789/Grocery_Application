@@ -1,0 +1,32 @@
+.toolbar-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.router-outlet-container {
+  clear: both;
+}
+
+.router-outlet-content {
+  clear: both;
+  margin-top: 16px;
+}
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+
+.mat-column-Description {
+  width: 35% !important;
+}
+table td {
+  padding: 10px;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

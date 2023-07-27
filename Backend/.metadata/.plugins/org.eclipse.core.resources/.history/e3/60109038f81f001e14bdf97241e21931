@@ -1,0 +1,5 @@
+package com.GroceryApp.dao;
+
+public interface CategoryDao {
+
+}

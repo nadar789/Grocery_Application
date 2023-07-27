@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col">
+    <ng-container *ngIf="!isLoggedIn">
+      <app-carousel></app-carousel>
+    </ng-container>
+    
+    <div class="row" *ngIf="isLoggedIn">
+      <app-product-list></app-product-list>
+      
+    </div>
+    
+    <div class="container" *ngIf="!isLoggedIn">
+      <app-banner-one></app-banner-one>
+    </div>
+    
+    <div class="container" *ngIf="!isLoggedIn">
+      <app-banner-two></app-banner-two>
+    </div>
+    
+    <div class="container" *ngIf="!isLoggedIn">
+      <app-banner-three></app-banner-three>
+    </div>
+    
+    <div class="container" *ngIf="!isLoggedIn">
+      <app-banner-four></app-banner-four>
+    </div>
+    
+    <div class="container" *ngIf="!isLoggedIn">
+      <app-banner-five></app-banner-five>
+    </div>
+  </div>
+</div>

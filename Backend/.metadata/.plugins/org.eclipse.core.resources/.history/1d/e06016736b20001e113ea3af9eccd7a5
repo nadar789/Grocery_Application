@@ -1,0 +1,14 @@
+package com.GroceryApp.Controller;
+
+import org.springframework.web.bind.annotation.GetMapping;
+
+public class CategoryController {
+
+	
+	@GetMapping({"/getAllCategories"})
+	public void getAllCategories() {
+		
+	}
+	
+	
+}

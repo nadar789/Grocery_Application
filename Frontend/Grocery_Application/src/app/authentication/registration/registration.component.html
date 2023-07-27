@@ -1,0 +1,52 @@
+<form class="form" #registerForm="ngForm" (ngSubmit)="register(registerForm)" >
+    <p class="form-title">Register</p>
+    <div class="input-container">
+      <input
+        placeholder="Enter username"
+        type="text"
+        ngModel
+        name="userName"
+        id="userName"
+        required
+      />
+    </div>
+    <div class="flex input-container">
+        <input
+        placeholder="First Name"
+        type="text"
+        ngModel
+        name="userFirstName"
+        id="userFirstName"
+        required
+      />
+      <input
+        placeholder="Last Name"
+        type="text"
+        ngModel
+        name="userLastName"
+        id="userLastName"
+        required
+      />
+    </div>
+    <div class="input-container">
+      <input
+        placeholder="Enter password"
+        type="password"
+        ngModel
+        name="userPassword"
+        id="userPassword"
+        required
+      />
+  
+      <p class="forget-link">
+        <a [routerLink]="'/forgotpassword'">Forgot Password?</a>
+      </p>
+    </div>
+    <button class="submit" type="submit" [disabled]="!registerForm.valid">Register</button>
+  
+    <p class="signup-link">
+      Already have an account?
+      <a [routerLink]="'/login'">Login</a>
+    </p>
+  </form>
+  

@@ -1,0 +1,39 @@
+package com.GroceryApp.Controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.GroceryApp.Entity.Category;
+import com.GroceryApp.dao.CategoryDao;
+
+@RestController
+public class CategoryController {
+	
+	@Autowired
+	 private CategoryDao categoryDao;
+	
+	
+	@PostMapping({"/addNewCategory"})
+	public void addNewCategory(String categoryTitle) {
+		Category category = new Category();
+		category.setCategoryTitle(categoryTitle);
+		categoryDao.save(category);
+		
+	}
+	
+	@DeleteMapping({"/deleteCategory"})
+    public void deleteCategory(Integer categoryId) {
+		categoryDao.deleteById(categoryId);
+    }
+	
+	@GetMapping("/getAllCategories")
+    public List<Category> getAllCategories() {
+        return categoryDao.findAll();
+    }
+
+}

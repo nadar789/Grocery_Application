@@ -1,0 +1,15 @@
+
+  #number {
+    width: 50px;
+    height: 30px;
+    padding: 0 5px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin: 0 10px;
+  }
+  .value-button:hover {
+    background-color: #f0f0f0;
+  }
+
+  

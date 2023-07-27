@@ -1,0 +1,33 @@
+<form class="form" #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+  <p class="form-title">Sign in to your account</p>
+  <div class="input-container">
+    <input
+      placeholder="Enter username"
+      type="text"
+      ngModel
+      name="userName"
+      id="userName"
+      required
+    />
+  </div>
+  <div class="input-container">
+    <input
+      placeholder="Enter password"
+      type="password"
+      ngModel
+      name="userPassword"
+      id="userPassword"
+      required
+    />
+
+    <p class="forget-link">
+      <a [routerLink]="'/forgotpassword'">Forgot Password?</a>
+    </p>
+  </div>
+  <button class="submit" type="submit" [disabled]="!loginForm.valid" >Sign in</button>
+
+  <p class="signup-link">
+    No account?
+    <a [routerLink]="'/registration'">Sign up</a>
+  </p>
+</form>

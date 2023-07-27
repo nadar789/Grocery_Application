@@ -1,0 +1,19 @@
+package com.GroceryApp.Controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import com.GroceryApp.Service.CategoryService;
+
+public class CategoryController {
+	
+	@Autowired
+	private CategoryService categoryService;
+	
+	@GetMapping({"/getAllCategories"})
+	public void getAllCategories() {
+		
+	}
+	
+	
+}

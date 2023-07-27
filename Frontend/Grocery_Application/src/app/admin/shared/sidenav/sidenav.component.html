@@ -1,0 +1,53 @@
+<mat-sidenav-container class="example-container">
+  <mat-sidenav mode="side" opened>
+    <ul>
+      <li class="nav-list-item">
+        <i class="fa-solid fa-house"></i>
+        <span>
+          <a routerLink="/admin">Home</a>
+        </span>
+      </li>
+      <li *ngFor="let item of list" class="nav-list-item">
+        <i class="{{ item.icon }}"></i>
+        <span>
+          <a [routerLink]="['/admin', item.route]">{{ item.name }}</a>
+        </span>
+      </li>
+    </ul>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+    <div class="container mt-5" *ngIf="isOnAdminRoute()">
+      <table mat-table [dataSource]="UserDetails" class="mat-elevation-z8">
+        <ng-container matColumnDef="User Name">
+          <th mat-header-cell *matHeaderCellDef>User Name</th>
+          <td mat-cell *matCellDef="let element">{{ element.userName }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="First Name">
+          <th mat-header-cell *matHeaderCellDef>First Name</th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.userFirstName }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Last Name">
+          <th mat-header-cell *matHeaderCellDef>Last Name</th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.userLastName }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Role">
+          <th mat-header-cell *matHeaderCellDef>Role</th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.role[0].roleName }}
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
